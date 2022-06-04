@@ -1,10 +1,214 @@
-* {
+*,
+*:before,
+*:after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+.burger {
+  display: none;
+}
+label .menu {
+  position: absolute;
+  right: -100px;
+  top: -100px;
+  z-index: 100;
+  width: 200px;
+  height: 200px;
+  background: #fff;
+  border-radius: 50% 50% 50% 50%;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  box-shadow: 0 0 0 0 #fff, 0 0 0 0 #fff;
+  cursor: pointer;
+}
+
+label .hamburger {
+  position: absolute;
+  top: 135px;
+  left: 50px;
+  width: 30px;
+  height: 2px;
+  background: #070707;
+  display: block;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+label .hamburger:after,
+label .hamburger:before {
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #070707;
+}
+
+label .hamburger:before {
+  top: -10px;
+}
+
+label .hamburger:after {
+  bottom: -10px;
+}
+
+label input {
+  display: none;
+}
+
+label input:checked + .menu {
+  box-shadow: 0 0 0 100vw #fff, 0 0 0 100vh #fff;
+  border-radius: 0;
+}
+
+label input:checked + .menu .hamburger {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+label input:checked + .menu .hamburger:after {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  bottom: 0;
+}
+
+label input:checked + .menu .hamburger:before {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  top: 0;
+}
+
+label input:checked + .menu + ul {
+  opacity: 1;
+}
+
+label ul {
+  z-index: 200;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: 0.25s 0s ease-in-out;
+  transition: 0.25s 0s ease-in-out;
+}
+
+label a {
+  margin-bottom: 1em;
+  display: block;
+  color: #070707;
+  text-decoration: none;
+}
+
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 80%;
+  text-align: center;
+}
 body {
   font-family: "Inter", sans-serif;
+}
+.excerpt {
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  color: #070707;
+  width: 70%;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+.review_flex {
+  width: 66%;
+  margin: 0 auto;
+  padding-top: 50px;
+  .review_flex_item {
+    display: flex;
+    padding: 8px 0;
+    justify-content: space-between;
+    textarea {
+      width: 80%;
+      height: 196px;
+      background: #ffffff;
+      border: 2px solid #070707;
+      border-radius: 8px;
+      padding-top: 10px;
+      padding-left: 10px;
+      font-size: 20px;
+    }
+    .email_input {
+      width: 80%;
+      height: 62px;
+      background: #ffffff;
+      border: 2px solid #070707;
+      border-radius: 8px;
+      padding-left: 10px;
+      font-size: 20px;
+    }
+    .name_input {
+      width: 80%;
+      height: 62px;
+      background: #ffffff;
+      border: 2px solid #070707;
+      border-radius: 8px;
+      padding-left: 10px;
+      font-size: 20px;
+    }
+    & p {
+      font-size: 20px;
+    }
+  }
+  .review_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.35s;
+    border: none;
+    background: none;
+    margin-top: 30px;
+    width: 100%;
+    padding: 25px 0;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    font-weight: 400;
+    font-size: 24px;
+    text-decoration: none;
+    position: relative;
+    color: #070707;
+    & span {
+      position: relative;
+      z-index: 2;
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: #ff003b;
+      transition: all 0.35s;
+      border-radius: 8px;
+    }
+
+    &:hover {
+      color: #fff;
+      border-radius: 8px;
+    }
+
+    &:hover:after {
+      width: 100%;
+    }
+  }
 }
 .subtitle {
   font-size: 24px;
@@ -36,7 +240,7 @@ body {
   width: 91.8%;
   margin: 0 auto;
 }
-.menu {
+.nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -47,6 +251,22 @@ body {
     color: #ffffff;
     text-decoration: none;
   }
+  & a:hover {
+    transform: scale(1.1);
+    text-decoration: underline 2px;
+  }
+  .pm_link {
+    color: blue;
+  }
+  .dev_link {
+    color: blue;
+  }
+  .ux_link {
+    color: blue;
+  }
+  .qa_link {
+    color: blue;
+  }
 }
 .start {
   background-image: url(../img/Main-Header.png);
@@ -54,13 +274,13 @@ body {
   height: 760px;
 }
 .start_pm {
-  background-image: url(../img/PM-Header.png);
+  background-image: url(../img/Optimized-the-management-is-checking-the-accuracy-of-the-com-R6QMHV7.jpg);
 }
 
 .start_ux {
   background-image: url(../img/1_H7k2HHicENJJRLAvD7xH9Q.jpeg);
 }
-.start_frontend{
+.start_frontend {
   background-image: url(../img/PM-Header.png);
 }
 .header_container {
@@ -73,6 +293,9 @@ body {
     font-size: 32px;
     color: #ffffff;
     text-decoration: none;
+    &:hover {
+      color: blue;
+    }
   }
 }
 .greeting {
@@ -90,6 +313,7 @@ body {
       font-size: 64px;
       color: #ffffff;
       line-height: 83px;
+      text-align: center;
     }
     .subtitle_greeting {
       text-align: center;
@@ -106,22 +330,35 @@ body {
     list-style: none;
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
     .advantages_item {
+      margin: 15px auto;
+
       flex-basis: 30%;
+      & img {
+        width: 50%;
+      }
     }
   }
 }
+.cource_container {
+  padding: 50px 0;
+  width: 66%;
+  margin: 0 auto;
+}
 .review {
-  .excerpt {
-    font-weight: 400;
-    font-size: 20px;
-    text-align: center;
-    color: #070707;
-    width: 45%;
-    margin: 0 auto;
-    padding: 15px 0;
-  }
   .review_list {
+    .review_link {
+      display: block;
+      margin-top: 10px;
+      color: #070707;
+      font-size: 20px;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
     padding: 50px;
     list-style: none;
     display: flex;
@@ -129,6 +366,10 @@ body {
     flex-direction: column;
     align-items: center;
     .review_item {
+      & img {
+        width: 100px;
+        height: 100px;
+      }
       width: 652px;
       height: 381px;
       background: #efefef;
@@ -136,6 +377,10 @@ body {
       display: flex;
       align-items: center;
       margin: 25px 0;
+      &:hover {
+        transform: scale(1.1);
+        transition: 1s;
+      }
       .review_container {
         height: 80%;
         align-items: center;
@@ -155,67 +400,25 @@ body {
       }
     }
   }
-  .review_flex {
-    width: 66%;
-    margin: 0 auto;
-    padding-top: 50px;
-    .review_flex_item {
-      display: flex;
-      padding: 8px 0;
-      justify-content: space-between;
-      .review_input {
-        width: 652px;
-        height: 196px;
-        background: #ffffff;
-        border: 2px solid #070707;
-        border-radius: 8px;
-      }
-      .email_input {
-        width: 652px;
-        height: 62px;
-        background: #ffffff;
-        border: 2px solid #070707;
-        border-radius: 8px;
-      }
-      .name_input {
-        width: 652px;
-        height: 62px;
-        background: #ffffff;
-        border: 2px solid #070707;
-        border-radius: 8px;
-      }
-      & p {
-        font-size: 20px;
-      }
-    }
-    .review_button {
-      border: #d1345b 1px solid;
-      margin-top: 30px;
-      width: 100%;
-      padding: 25px 0;
-      background: #d1345b;
-      border-radius: 8px;
-      font-weight: 400;
-      font-size: 24px;
-      color: #070707;
-    }
-  }
 }
 .schools {
   padding: 70px 0;
   .schools_list {
+    width: 66%;
     list-style: none;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 50px 0;
     .school_card {
-      width: 316px;
-      height: 316px;
+      width: 45%;
+      height: 450px;
       background: #efefef;
       border-radius: 12px;
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       .school_card_container {
         width: 90%;
         height: 90%;
@@ -224,6 +427,7 @@ body {
         justify-content: space-between;
         & img {
           width: 100%;
+          border-radius: 10px;
         }
         .subtitle_school {
           color: #070707;
@@ -233,16 +437,28 @@ body {
         .school_link {
           display: flex;
           align-items: center;
-          width: 60%;
+          width: 22%;
           justify-content: space-between;
           & img {
             width: 33px;
             height: 22px;
           }
-          & p {
+          & a {
             font-size: 18px;
+            text-decoration: none;
+            color: #070707;
+          }
+          &:hover {
+            color: blue;
+            text-decoration: underline;
           }
         }
+      }
+      &:hover {
+        transform: scale(1.1);
+        transition: 1s;
+
+        background: #bdbdbd;
       }
     }
   }
@@ -254,6 +470,9 @@ footer {
 .footer_menu {
   width: 45%;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   & a {
     color: #070707;
     font-size: 24px;
@@ -269,20 +488,426 @@ footer {
 .pm_description {
   padding: 60px 0;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   .pm_description_image {
-    flex-basis: 48%;
+    width: 66%;
     & img {
       width: 100%;
     }
   }
   .pm_description_text {
-    flex-basis: 48%;
+    padding-top: 40px;
+    width: 50%;
     .pm_heading {
-      text-align: left;
+      text-align: center;
     }
     .pm_caption {
       font-weight: 400;
+      text-align: center;
     }
   }
+}
+
+.course_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.35s;
+  border: none;
+  background: none;
+  margin-top: 30px;
+  width: 100%;
+  padding: 25px 0;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-weight: 400;
+  font-size: 24px;
+  text-decoration: none;
+  position: relative;
+  color: #070707;
+  & span {
+    position: relative;
+    z-index: 2;
+  }
+  &:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #34d1bf;
+    transition: all 0.35s;
+    border-radius: 8px;
+  }
+
+  &:hover {
+    color: #fff;
+    border-radius: 8px;
+  }
+
+  &:hover:after {
+    width: 100%;
+  }
+}
+.work {
+  & img {
+    width: 100%;
+    padding: 20px 0;
+  }
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .work_excerpt {
+    width: 100%;
+  }
+  .work_container {
+    width: 66%;
+    .work_list {
+      padding: 10px 0;
+      .work_item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+      }
+    }
+    .pros {
+      display: flex;
+      align-items: center;
+      .pros_container {
+        width: 100%;
+        padding: 20px 0;
+        .pros_list {
+          padding: 10px 0;
+          .pros_item {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.work_text {
+  font-size: 20px;
+  width: 95%;
+}
+.minus {
+  width: 3%;
+  height: 2px;
+  background: #ff003b;
+  border-radius: 2px;
+}
+.salary {
+  .salary_container {
+    width: 66%;
+    margin: 0 auto;
+    & img {
+      width: 100%;
+      padding: 20px 0;
+    }
+    .salary_excerpt {
+      width: 70%;
+      padding: 20px 0;
+    }
+  }
+}
+@media (max-width: 1240px) {
+  .schools {
+    .schools_list {
+      .school_card {
+        height: 300px;
+      }
+    }
+  }
+}
+@media (max-width: 1020px) {
+  .greeting {
+    height: 600px;
+    .greeting_container {
+      .title {
+        font-size: 56px;
+      }
+    }
+  }
+  .review_flex {
+    width: 66%;
+    margin: 0 auto;
+    padding-top: 50px;
+    .review_flex_item {
+      display: flex;
+      padding: 8px 0;
+      justify-content: space-between;
+      textarea {
+        width: 70%;
+        height: 100px;
+        background: #ffffff;
+        border: 2px solid #070707;
+        border-radius: 8px;
+        padding-top: 10px;
+        padding-left: 10px;
+        font-size: 20px;
+      }
+      .email_input {
+        width: 70%;
+        height: 62px;
+        background: #ffffff;
+        border: 2px solid #070707;
+        border-radius: 8px;
+        padding-left: 10px;
+        font-size: 20px;
+      }
+      .name_input {
+        width: 70%;
+        height: 62px;
+        background: #ffffff;
+        border: 2px solid #070707;
+        border-radius: 8px;
+        padding-left: 10px;
+        font-size: 20px;
+      }
+      & p {
+        font-size: 20px;
+      }
+    }
+  }
+  .advantages {
+    .advantages_list {
+      .advantages_item {
+        & img {
+          width: 160px;
+          height: 160px;
+        }
+      }
+    }
+  }
+  .review {
+    .review_list {
+      .review_item {
+        height: 350px;
+        .review_container {
+          .user_text {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  .nav {
+    flex-basis: 50%;
+  }
+  .heading {
+    font-size: 36px;
+  }
+  .caption {
+    font-size: 24px;
+  }
+  .footer_menu {
+    width: 60%;
+  }
+}
+@media (max-width: 800px) {
+  .pm_description{
+    .pm_description_text{
+      width: 90%;
+      .pm_caption{
+        font-size: 20px;
+      }
+    }
+  }
+  .work{
+    .work_container{
+      width: 90%;
+    }
+  }
+  .salary{
+    .salary_container{
+      width: 90%;
+      .salary_excerpt{
+        width: 100%;
+      }
+    }
+  }
+  .schools {
+    .schools_list {
+      padding: 0;
+      flex-direction: column;
+      .school_card {
+        height: 400px;
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+  }
+  .greeting {
+    height: 400px;
+    .greeting_container {
+      .title {
+        font-size: 40px;
+      }
+    }
+  }
+  .review_flex {
+    width: 66%;
+    margin: 0 auto;
+    padding-top: 50px;
+    .review_flex_item {
+      display: flex;
+      padding: 8px 0;
+      justify-content: space-between;
+      textarea {
+        width: 70%;
+        height: 100px;
+        background: #ffffff;
+        border: 2px solid #070707;
+        border-radius: 8px;
+        padding-top: 10px;
+        padding-left: 10px;
+        font-size: 20px;
+      }
+      .email_input {
+        width: 70%;
+        height: 62px;
+        background: #ffffff;
+        border: 2px solid #070707;
+        border-radius: 8px;
+        padding-left: 10px;
+        font-size: 20px;
+      }
+      .name_input {
+        width: 70%;
+        height: 62px;
+        background: #ffffff;
+        border: 2px solid #070707;
+        border-radius: 8px;
+        padding-left: 10px;
+        font-size: 20px;
+      }
+      & p {
+        font-size: 20px;
+      }
+    }
+  }
+  .advantages {
+    .advantages_list {
+      .advantages_item {
+        & img {
+          width: 160px;
+          height: 160px;
+        }
+      }
+    }
+  }
+  .review {
+    .review_list {
+      .review_item {
+        width: 80%;
+        height: 350px;
+        .review_container {
+          .user_text {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  .nav {
+    flex-basis: 50%;
+  }
+  .heading {
+    font-size: 36px;
+  }
+  .caption {
+    font-size: 24px;
+  }
+  .footer_menu {
+    width: 70%;
+  }
+}
+@media (max-width: 590px) {
+  .caption{
+    font-size: 18px;
+  }
+  .work_text{
+    font-size: 16px;
+  }
+  .excerpt{
+    font-size: 16px;
+  }
+  .pm_description{
+    .pm_description_text{
+      width: 100%;
+      .pm_heading{
+        width: 100%;
+      }
+      .pm_caption{
+        font-size: 16px;
+      }
+    }
+  }
+  .nav {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  .header_container {
+    .logo {
+      font-size: 24px;
+    }
+  }
+  .greeting {
+    height: 100px;
+    .subtitle_greeting {
+      width: 80%;
+      font-size: 20px;
+    }
+    .greeting_container {
+      .title {
+        font-size: 30px;
+      }
+    }
+  }
+  .review {
+    .review_flex {
+      & p {
+        font-size: 14px;
+      }
+    }
+  }
+  .heading {
+    font-size: 30px;
+  }
+  .review {
+    .review_list {
+      .review_item {
+        width: 100%;
+        height: 450px;
+        .review_container {
+          .user_text {
+            font-size: 14px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  .schools{
+    padding: 20px 0;
+    
+  }
+  .footer_menu {
+    display: none;
+  }
+  footer{
+    padding: 10px 0;
+  }
+  
 }
