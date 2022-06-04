@@ -29,6 +29,19 @@
             <a href="index2.html">PM</a>
             <a class="qa_link" href="index5.html">QA</a>
           </nav>
+          <div class="burger">
+            <label>
+              <input type="checkbox" />
+              <span class="menu"> <span class="hamburger"></span> </span>
+              <ul>
+                <li><a href="./index.html">Главная</a></li>
+                <li><a href="index3.html">Front/Back-end</a></li>
+                <li><a href="index4.html">UX/UI</a></li>
+                <li><a href="index2.html">PM</a></li>
+                <li><a href="index5.html" class="qa_link">QA</a></li>
+              </ul>
+            </label>
+          </div>
         </div>
       </header>
       <div class="greeting">
@@ -85,106 +98,41 @@
             </div>
           </div>
           
-      </div>
-    </main>
-    <footer>
-        <nav class="menu footer_menu">
-          <a href="./index.html">Главная</a>
-          <a href="index3.html">Front/Back-end</a>
-          <a href="index4.html">UX/UI</a>
-          <a href="index2.html">PM</a>
-        </nav>
-        <p class="copy">Copyright IT Conductor, 2022</p>
-      </footer>
-  </body>
-</html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QA</title>
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./scss/style.scss" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="start start_pm">
-      <header>
-        <div class="container header_container">
-          <a class="logo" href="index.html">
-            <div class="logo">IT Conductor</div>
-          </a>
-          <nav class="nav">
-            <a href="./index.html">Главная</a>
-            <a href="index3.html">Front/Back-end</a>
-            <a href="index4.html">UX/UI</a>
-            <a href="index2.html">PM</a>
-            <a class="qa_link" href="index5.html">QA</a>
-          </nav>
-        </div>
-      </header>
-      <div class="greeting">
-        <div class="container greeting_container">
-          <p class="title">Тестируй приложения вместе с нами!</p>
-          <p class="subtitle subtitle_greeting">
-              Обеспечивай качество продукта еще на начале разработки!
-          </p>
-        </div>
-      </div>
-    </div>
-    <main>
-      <div class="container">
-        <div class="pm_description">
-          <div class="pm_description_image">
-            <img src="./img/programming-debug-search-application-software-bug-fix-code-concept_212586-292.webp" alt="qa">
-          </div>
-          <div class="pm_description_text">
-            <p class="heading pm_heading">Кто такой QA специалист?</p>
-            <p class="caption pm_caption">
-              <b>QA Engineer</b> — это специалист по обеспечению качества, деятельность которого направлена на улучшение процесса разработки ПО, предотвращение дефектов и выявление ошибок в работе продукта.
+        <div class="course">
+          <div class="cource_container">
+            <p class="heading">Запись на курс</p>
+            <p class="excerpt">
+              Окунитесь в профессию менеджера IT-проектов. Вместе с Myfreedom
+              пройдите все этапы управления проектом.
             </p>
+            <a
+              href="https://myfreedom.by/courses/qa"
+              class="course_button"
+              target="_blank"
+              ><span>Записаться</span></a
+            >
           </div>
         </div>
-        <div class="advantages">
-            <div class="container">
-              <p class="heading heading_advantages">Навыки QA специалиста</p>
-              <ul class="advantages_list">
-                <li class="advantages_item">
-                  <img src="./img/iMac 1.png" alt="Computer" />
-                  <p class="caption">Первое</p>
-                  <p class="description">
-                    Имеется спорная точка зрения, гласящая примерно следующее:рамках
-                    своих собственных рациональных ограничений.
-                  </p>
-                </li>
-                <li class="advantages_item">
-                  <img src="./img/Folder 1.png" alt="Folder" />
-                  <p class="caption">Второе</p>
-                  <p class="description">
-                    Имеется спорная точка зрения, гласящая примерно следующее:рамках
-                    своих собственных рациональных ограничений.
-                  </p>
-                </li>
-                <li class="advantages_item">
-                  <img src="./img/Processor 1.png" alt="Processor" />
-                  <p class="caption">Третье</p>
-                  <p class="description">
-                    Имеется спорная точка зрения, гласящая примерно следующее:рамках
-                    своих собственных рациональных ограничений.
-                  </p>
-                </li>
-              </ul>
-            </div>
+        <p class="heading review_heading">Оставьте Ваш отзыв</p>
+        <p class="excerpt">
+          Каждый день мы работаем над тем, чтобы стать лучше! Нам очень важно
+          знать Ваше мнение о нашем проекте и качестве информации на нём.
+        </p>
+        <div class="review_flex">
+          <div class="review_flex_item">
+            <p>Ваш отзыв</p>
+            <textarea name="review" id="" cols="30" rows="10"></textarea>
           </div>
-          
+          <div class="review_flex_item">
+            <p>Эл. почта</p>
+            <input type="text" class="email_input" />
+          </div>
+          <div class="review_flex_item">
+            <p>Ваше имя</p>
+            <input type="text" class="name_input" />
+          </div>
+          <a href="#" class="review_button"><span>Отправить</span></a>
+        </div>
       </div>
     </main>
     <footer>
@@ -198,4 +146,3 @@
       </footer>
   </body>
 </html>
->>>>>>> da5818f7919f09f4c3aa0a215f5ce1238adc8ee8
